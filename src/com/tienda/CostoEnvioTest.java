@@ -25,4 +25,9 @@ public class CostoEnvioTest {
     void pedidoDe1000EsGratis() {
         assertEquals(0, CostoEnvio.calcular(1000));
     }
+    @Test
+    void clientePremiumTieneEnvioGratis() {
+        assertEquals(0, CostoEnvio.calcular(400, true));
+
+    }
 }

@@ -10,6 +10,14 @@ public class CostoEnvio {
     private static final double COSTO_ENVIO_GRATIS = 0;
 
     public static double calcular(double importePedido) {
+        return calcular(importePedido, false);
+    }
+
+    public static double calcular(double importePedido, boolean clientePremium) {
+        if (clientePremium) {
+            return COSTO_ENVIO_GRATIS;
+        }
+
         if (importePedido < LIMITE_ENVIO_REDUCIDO) {
             return COSTO_ENVIO_NORMAL;
         } else if (importePedido < LIMITE_ENVIO_GRATIS) {
